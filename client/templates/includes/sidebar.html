@@ -1,0 +1,22 @@
+<template name="sidebar">
+  <ul class="nav nav-sidebar">
+    <li class="active"><a href="#">Home <span class="sr-only">(current)</span></a></li>
+    <li><a href="">About fwDB</a></li>
+    <li><a href="">Copyright</a></li>
+  </ul>
+<p>Drinks</p>
+<ul class="nav nav-sidebar">
+  <li><a href="">Most Popular</a></li>
+  <li><a href="">Newest</a></li>
+  <li><a href="">Random</a></li>
+
+
+{{#if currentUser}}
+  <p>My Pages:</p>
+  <ul class="nav nav-sidebar">
+    <li><a href="">My Bar</a></li>
+    <li><a href="">My Recipies</a></li>
+    <li><a href="">My Comments</a></li>
+  </ul>
+{{/if}}
+</template>
