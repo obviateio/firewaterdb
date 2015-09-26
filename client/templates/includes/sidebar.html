@@ -1,15 +1,17 @@
 <template name="sidebar">
   <ul class="nav nav-sidebar">
-    <li class="active"><a href="#">Home <span class="sr-only">(current)</span></a></li>
-    <li><a href="">About fwDB</a></li>
-    <li><a href="">Copyright</a></li>
+    <li class="{{activeRouteClass 'home'}}"><a href="{{pathFor 'home'}}">Home</a></li>
+    <li class="{{activeRouteClass 'about'}}"><a href="{{pathFor 'about'}}">About fwDB</a></li>
+    <li class="{{activeRouteClass 'copyright'}}"><a href="{{pathFor 'copyright'}}">Copyright</a></li>
   </ul>
+
 <p>Drinks</p>
 <ul class="nav nav-sidebar">
-  <li><a href="">Most Popular</a></li>
-  <li><a href="">Newest</a></li>
+  {{#if currentUser}}<li class="{{activeRouteClass 'recipSubmit'}}"><a href="{{pathFor 'recipSubmit'}}">Submit New</a></li>{{/if}}
+  <li class="{{activeRouteClass 'recipPopular'}}"><a href="{{pathFor 'recipPopular'}}">Most Popular</a></li>
+  <li class="{{activeRouteClass 'recipNewest'}}"><a href="{{pathFor 'recipNewest'}}">Newest</a></li>
   <li><a href="">Random</a></li>
-
+</ul>
 
 {{#if currentUser}}
   <p>My Pages:</p>
