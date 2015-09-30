@@ -2,11 +2,11 @@
 <h1 class="page-header">Submit a new Drink</h1>
 <div class="row">
 <p>
-{{#autoForm collection="Drinks" id="newDrinkForm" type="insert"}}
+{{#autoForm collection="Drinks" id="newDrinkForm" type="insert" template="bootstrap3" }}
    <fieldset>
      {{> afQuickField name='name'}}
      {{> afQuickField name='description'}}
-     {{> afQuickField name='ingredients' template="custom_ingredients"}}
+     {{> afQuickField name='ingredients' template="custom_ingredients" bodyclass="container-fluid row"}}
      {{> afQuickField name='instructions' rows=6}}
    </fieldset>
    <button type="submit" class="btn btn-primary">Save new drink</button>
@@ -28,12 +28,14 @@
       <li class="list-group-item autoform-array-item">
         <div>
           <div class="autoform-remove-item-wrap">
-            {{#if afArrayFieldHasMoreThanMinimum name=../atts.name minCount=../atts.minCount maxCount=../atts.maxCount}}
-            <button type="button" class="btn btn-primary autoform-remove-item"><span class="glyphicon glyphicon-minus"></span></button>
-            {{/if}}
+            <button type="button" class="btn btn-primary autoform-remove-item" style="{{#unless afArrayFieldHasMoreThanMinimum name=../atts.name minCount=../atts.minCount maxCount=../atts.maxCount}}visibility: hidden;{{/unless}}"><span class="glyphicon glyphicon-minus"></span></button>
           </div>
           <div class="autoform-array-item-body">
-            {{> afQuickField name=this.name label=false options=afOptionsFromSchema}}
+            {{> afQuickField name=this.name label=false options=afOptionsFromSchema formgroup-class="col-md-4" class="form-control"}}
+              <!-- {{> afQuickField name='ingredients.$.quantity' options=afOptionsFromSchema formgroup-class="col-md-3" class="form-control" step=".1"}}
+              {{> afQuickField name='ingredients.$.unit' options=unitOptions formgroup-class="col-md-3" class="form-control"}}
+              {{> afQuickField name='ingredients.$.ingredient' options=afOptionsFromSchema formgroup-class="col-md-6" class="form-control"}}
+              {{> afQuickField name='ingredients.$.ingredientID' options=afOptionsFromSchema}} -->
           </div>
         </div>
       </li>

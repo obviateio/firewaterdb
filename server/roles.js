@@ -5,11 +5,12 @@ var users = [
      {name:"Admin User",email:"admin@example.com",roles:['admin']}
    ];
 
-if(Meteor.users.findOne({email: 'admin@example.com'})){
+if(Meteor.users.find().count() === 0){
   //If our default user set doesn't exist, create it.
  _.each(users, function (user) {
    var id;
 
+   console.log('Data load, creating user: ' + user.email);
    id = Accounts.createUser({
      email: user.email,
      password: "apple1",

@@ -11,3 +11,15 @@ if (IngredientsList.find().count() === 0) {
     });
   }
 }
+
+// Load the units of measurement, first start only
+if (UnitsList.find().count() === 0) {
+
+  var units = ['shot', 'oz', 'tsp', 'tbsp', 'dash', 'part', 'cup', 'splash'];
+  for(var i of units){
+    console.log('Adding units:'+ i);
+    UnitsList.insert({
+      name: i,
+    });
+  }
+}
