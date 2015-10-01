@@ -16,9 +16,9 @@
 {{#if currentUser}}
   <p>My Pages:</p>
   <ul class="nav nav-sidebar">
-    <li><a href="">My Bar</a></li>
-    <li><a href="">My Recipies</a></li>
-    <li><a href="">My Comments</a></li>
+    <li class="{{activeRouteClass 'myBar'}}"><a href="{{pathFor 'myBar'}}">My Bar</a></li>
+    <li class="{{activeRouteClass 'myRecipes'}}"><a href="{{pathFor 'myRecipies'}}">My Recipies</a></li>
+    <li class="{{activeRouteClass 'myComments'}}"><a href="{{pathFor 'myComments'}}">My Comments</a></li>
   </ul>
 {{/if}}
 </template>
