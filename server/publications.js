@@ -15,9 +15,12 @@ Meteor.publish('unitsList', function() {
 });
 
 Meteor.publish('notifications', function() {
-  return Notifications.find({userId: this.userId, read: false});
+  return Notifications.find({
+    userId: this.userId,
+    read: false
+  });
 });
 
-Meteor.publish(null, function (){
-  return Meteor.roles.find({})
-})
+Meteor.publish(null, function() {
+  return Meteor.roles.find({});
+});
