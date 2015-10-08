@@ -13,7 +13,7 @@ Quick todo doc for whatever random things need remembering for later
 * https://atmospherejs.com/meteor/spiderable
 * https://atmospherejs.com/momentjs/moment
 * https://atmospherejs.com/matteodem/easy-search
-* https://atmospherejs.com/mizzao/autocomplete
+* https://atmospherejs.com/mizzao/autocomplete -- Installed
 * https://atmospherejs.com/manuelschoebel/ms-seo
 * https://atmospherejs.com/gadicohen/sitemaps
 * https://atmospherejs.com/alanning/roles -- Installed
