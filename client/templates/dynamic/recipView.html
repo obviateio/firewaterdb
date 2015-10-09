@@ -1,3 +1,42 @@
 <template name="recipView">
-  {{> recipDisplay}}
+  <div class="recipe">
+    <div class="row">
+      <div class="col-md-9"><h1 class="page-header">{{name}}</h1></div>
+      <div class="col-md-2">Rank this recipe:<br /><span class="text-nowrap" style="font-size:2em">{{{starDisplay ratingAverage}}}</span></div>
+      <div class="col-md-1">{{> fav}}</div>
+    </div>
+    <div class="row">
+      <div class="col-md-3" style="font-weight: bold;">Description</div>
+      <div class="col-md-9">{{description}}</div>
+    </div>
+    <div class="row">
+      <div class="col-md-3" style="font-weight: bold;">Ingredients</div>
+      <div class="col-md-9">
+        <ul>{{#each ingredients}}
+          {{> listIngredFull}}
+          {{/each}}
+        </ul>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-3" style="font-weight: bold;">Instructions</div>
+      <div class="col-md-9">{{instructions}}</div>
+    </div>
+    <div class="row" style="color: grey; font-size: .75em; padding-top: 2em;">
+      <div class="col-md-3">Created by:<br />{{createdUser}}</div>
+      <div class="col-md-3">Created at:<br />{{createdWhen}}</div>
+      <div class="col-md-3">Last updated by:<br />{{orNA updatedUser}}</div>
+      <div class="col-md-3">Last updated at:<br />{{orNA updatedWhen}}</div>
+    </div>
+  </div>
+</template>
+
+<template name="listIngredFull">
+  <li>{{quantity}} {{translateUnit unit}} * {{ingredient}} ({{ingredientID}})</li>
+</template>
+
+<template name="fav">
+  Favorite:<br />
+  <i class="fa fa-plus-square-o" title="Add to favorites" style="font-size:2em"></i>
+  <i class="fa fa-minus-square-o" title="Remove from favorites" style="font-size:2em"></i>
 </template>

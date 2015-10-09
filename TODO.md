@@ -1,6 +1,36 @@
 # Todo
 Quick todo doc for whatever random things need remembering for later
 
+## MVP code tasks
+* [x] View individual drinks
+* [ ] Saving new drink redirects to view page
+* [ ] Public user profile page
+* [ ] Private user profile page
+* [ ] Edit drink
+* [ ] Retain edit history
+* [ ] Markdown in drink instructions?
+* [ ] Dynamic ingredient addition
+* [ ] Fix ingredient ID save
+* [ ] Admin add/remove ingredient & unit sizes
+* [ ] Rating (star) system
+* [ ] Favorite system
+* [ ] Basic admin/moderator tools
+* [ ] Fix # of ingredients
+
+## Deployment tasks
+* [ ] Fix Docker file
+* [ ] Document deployment
+
+## Beyond MVP code
+* [ ] Comment system
+* [ ] Database dumps
+* [ ] Fix the main page to not load all recipes
+* [ ] Security, Security, Security
+* [ ] Good mobile web experience
+* [ ] Cordova specific functionality
+  * [ ] Save favorites & highly rated for offline use
+* [ ] Photos
+
 ## Packages to look into later
 * https://atmospherejs.com/meteor/fastclick
 * https://atmospherejs.com/zimme/active-route

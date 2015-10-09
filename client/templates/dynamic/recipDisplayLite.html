@@ -1,0 +1,40 @@
+<template name="recipDisplayLite">
+  <div class="recipe">
+    <div class="row">
+      <div class="col-md-9" style="font-weight: bold; font-size: 2em;">
+        <a href="{{pathFor 'recipView'}}">{{name}}</a>
+      </div>
+      <div class="col-md-3">
+        <div class="row">
+          <span class="text-nowrap">{{{starDisplay ratingAverage}}}</span>
+        </div>
+        <div class="row" style="font-size: .75em; color: grey;">
+          {{fromNow createdWhen}}
+        </div>
+      </div>
+    </div>
+    <div class="row" style="padding-top: .5em;">
+      <div class="col-md-3" style="font-weight: bold;">Description</div>
+      <div class="col-md-9">{{description}}</div>
+    </div>
+    <div class="row" style="padding-top: .5em;">
+      <div class="col-md-3" style="font-weight: bold;">Ingredients</div>
+      <div class="col-md-9">
+        <ul style="padding-left: 1em;">{{#each ingredients}}
+          {{> listIngredLite}}
+          {{/each}}
+        </ul>
+      </div>
+    </div>
+    <div class="row" style="padding-top: .5em;">
+      <div class="col-md-3" style="font-weight: bold;">Instructions</div>
+      <div class="col-md-9">{{instructions}}</div>
+    </div>
+  </div>
+  <hr style="margin: 5px;">
+</template>
+
+
+<template name="listIngredLite">
+  <li>{{quantity}} {{translateUnit unit}} * {{ingredient}} ({{ingredientID}})</li>
+</template>
